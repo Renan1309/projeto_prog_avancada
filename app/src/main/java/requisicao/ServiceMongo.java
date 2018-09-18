@@ -30,7 +30,8 @@ public class ServiceMongo extends AsyncTask<Void, Void , List<Pessoa>> {
     @Override
     protected List<Pessoa> doInBackground(Void... voids) {
 
-        String urlmongo = "https://vast-hollows-56426.herokuapp.com/cadastro";
+        //String urlmongo = "https://vast-hollows-56426.herokuapp.com/cadastro";
+        String urlmongo = "http://192.168.15.9:8080/cadastro";
         InputStream inputStream = null;
 
         InputStreamReader inputStreamReader = null;

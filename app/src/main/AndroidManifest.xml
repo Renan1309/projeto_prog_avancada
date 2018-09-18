@@ -23,7 +23,8 @@
         <activity android:name=".CepActivity" />
         <activity android:name=".CurriculoActivity" />
         <activity android:name=".ListServiceActivity" />
-
+        <activity android:name=".FeedbackActivity" />
+        <activity android:name=".ProfissionalActivity"></activity>
     </application>
 
 </manifest>

@@ -51,6 +51,8 @@ public class CardsActivity extends AppCompatActivity {
                               break;
                           case 1:
                               Toast.makeText(getApplicationContext(), "Click feedback", Toast.LENGTH_SHORT).show();
+                              Intent activityfeedback = new Intent(CardsActivity.this,FeedbackActivity.class);
+                              startActivity(activityfeedback);
                               break;
                           case 2 :
                               Toast.makeText(getApplicationContext(), "Card teste", Toast.LENGTH_SHORT).show();
