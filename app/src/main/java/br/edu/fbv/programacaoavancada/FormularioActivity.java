@@ -2,6 +2,7 @@ package br.edu.fbv.programacaoavancada;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,12 @@ public class FormularioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.segundotoolbar);
+        toolbar.setTitle("Formulário"); // tava dando erro aqui fui procurar no git
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         bottonEnviarForm =  findViewById(R.id.buttonEnviaForm);
         nome_formulario = findViewById(R.id.nome_formulario);

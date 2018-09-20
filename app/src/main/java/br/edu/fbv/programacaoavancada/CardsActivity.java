@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,9 +26,20 @@ public class CardsActivity extends AppCompatActivity {
     private List<AtividadesListadas> atividadeslistadas  = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+       // toolbar = (Toolbar) v.findViewById(R.id.toolbar);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cards);
             //recebe xml e covert em view
+
+        Toolbar toolbarx = (Toolbar) findViewById(R.id.segundotoolbar);
+        toolbarx.setTitle("Prog Avançada"); // tava dando erro aqui fui procurar no git
+        setSupportActionBar(toolbarx);//funcionar em versões anteriores
+
+
+
         recyclerAtividades = findViewById(R.id.recyclerAtividades);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
@@ -45,6 +57,7 @@ public class CardsActivity extends AppCompatActivity {
                   public void onItemClick(View view, int position) {
                       switch(position) {
                           case 0:
+                              //Perguntar aso prof se é pra jogar dentro de uma função as Intents
                               Toast.makeText(getApplicationContext(), "Acessando lista de serviços", Toast.LENGTH_SHORT).show();
                               Intent listaServicos = new Intent(CardsActivity.this, ListServiceActivity.class);
                               startActivity(listaServicos);
@@ -56,6 +69,9 @@ public class CardsActivity extends AppCompatActivity {
                               break;
                           case 2 :
                               Toast.makeText(getApplicationContext(), "Card teste", Toast.LENGTH_SHORT).show();
+
+                              Intent toolbar= new Intent(CardsActivity.this,ProfissionalActivity.class);
+                              startActivity(toolbar);
                               break;
                           default:
 
