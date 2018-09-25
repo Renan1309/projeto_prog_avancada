@@ -58,7 +58,6 @@ public class CardsActivity extends AppCompatActivity {
                       switch(position) {
                           case 0:
                               //Perguntar aso prof se é pra jogar dentro de uma função as Intents
-                              Toast.makeText(getApplicationContext(), "Acessando lista de serviços", Toast.LENGTH_SHORT).show();
                               Intent listaServicos = new Intent(CardsActivity.this, ListServiceActivity.class);
                               startActivity(listaServicos);
                               break;
@@ -70,7 +69,7 @@ public class CardsActivity extends AppCompatActivity {
                           case 2 :
                               Toast.makeText(getApplicationContext(), "Card teste", Toast.LENGTH_SHORT).show();
 
-                              Intent toolbar= new Intent(CardsActivity.this,ProfissionalActivity.class);
+                              Intent toolbar= new Intent(CardsActivity.this,OpinioesActivity.class);
                               startActivity(toolbar);
                               break;
                           default:

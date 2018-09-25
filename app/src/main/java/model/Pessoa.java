@@ -2,7 +2,9 @@ package model;
 
 import android.graphics.Bitmap;
 
-public class Pessoa {
+import java.io.Serializable;
+
+public class Pessoa implements Serializable {
    private String id;
     private String nome ;
     private String profissao;

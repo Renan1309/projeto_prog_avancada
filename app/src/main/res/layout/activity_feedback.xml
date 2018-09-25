@@ -6,13 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".FeedbackActivity">
 
+    <include layout ="@layout/toolbarsegundo"/>
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="289dp"
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="64dp"
         android:text="Diga sua opinião sobre a aplicação"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

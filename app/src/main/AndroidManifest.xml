@@ -18,16 +18,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormularioActivity"
-            android:parentActivityName=".CardsActivity"/>
+        <activity
+            android:name=".FormularioActivity"
+            android:parentActivityName=".CardsActivity" />
         <activity android:name=".OpcoesMenuActivity" />
         <activity android:name=".CepActivity" />
         <activity android:name=".CurriculoActivity" />
-        <activity android:name=".ListServiceActivity"
-            android:parentActivityName=".CardsActivity"/>
-        <activity android:name=".FeedbackActivity" />
-        <activity android:name=".ProfissionalActivity"
-            android:parentActivityName=".CardsActivity"></activity>
+        <activity
+            android:name=".ListServiceActivity"
+            android:parentActivityName=".CardsActivity" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:parentActivityName=".CardsActivity" />
+        <activity
+            android:name=".ProfissionalActivity"
+            android:parentActivityName=".ListServiceActivity" />
+        <activity android:name=".OpinioesActivity"></activity>
     </application>
 
 </manifest>

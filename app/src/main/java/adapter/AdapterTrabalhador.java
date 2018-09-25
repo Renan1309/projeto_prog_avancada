@@ -1,6 +1,7 @@
 package adapter;
 
 import android.app.Activity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -40,6 +41,31 @@ public class AdapterTrabalhador extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
+        View view;
+        //TextView nome;
+        ViewHolder holder ;
+
+        if( convertView == null) {
+            view = activity.getLayoutInflater().inflate(R.layout.lista_profissional, parent, false);
+            Pessoa pessoa = pessoas.get(position);
+            //nome = (TextView)  view.findViewById(R.id.textServico);
+           // nome.setText(pessoa.getNome());
+
+            holder = new ViewHolder(view);
+            view.setTag(holder);
+
+
+        } else {
+            view = convertView;
+            holder = (ViewHolder) view.getTag();
+        }
+        Pessoa pessoa = pessoas.get(position);
+        holder.nome.setText(pessoa.getNome());
+        return view;
+
+
+        /**
         //metodo responsável pela construção de cada item
         View view = activity.getLayoutInflater().inflate(R.layout.lista_profissional, parent, false);
         Pessoa pessoa = pessoas.get(position);
@@ -48,5 +74,18 @@ public class AdapterTrabalhador extends BaseAdapter {
         nome.setText(pessoa.getNome());
 
         return view;
+         */
+    }
+
+    public class ViewHolder {
+
+        final TextView nome;
+
+
+        public ViewHolder(View view) {
+            nome = (TextView) view.findViewById(R.id.textServico);
+
+        }
+
     }
 }

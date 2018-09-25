@@ -35,12 +35,7 @@ public class PostService extends AsyncTask<Pessoa, Void, String> {
             postDataParams.put("telefone" ,pessoaRecebida.getTelefone());
             postDataParams.put("site" ,pessoaRecebida.getSite());
 
-            /**
-            postDataParams.put("nome" ,"Testevgvhgsd");
-            postDataParams.put("profissao" ,"Testefdsgds");
-            postDataParams.put("telefone" ,"77777778989898535");
-            postDataParams.put("site" ,"Teste");
-             */
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -78,3 +73,10 @@ public class PostService extends AsyncTask<Pessoa, Void, String> {
         return null;
     }
 }
+
+/**
+ postDataParams.put("nome" ,"Testevgvhgsd");
+ postDataParams.put("profissao" ,"Testefdsgds");
+ postDataParams.put("telefone" ,"77777778989898535");
+ postDataParams.put("site" ,"Teste");
+ */

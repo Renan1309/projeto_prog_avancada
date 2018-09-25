@@ -33,7 +33,7 @@
         tools:layout_editor_absoluteX="8dp">
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/nomeprofissional"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"
@@ -41,7 +41,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/profissaoprofissional"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"
@@ -49,7 +49,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/telprofissional"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"
@@ -57,7 +57,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/emailprofissional"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="12dp"

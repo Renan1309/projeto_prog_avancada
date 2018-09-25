@@ -1,12 +1,18 @@
 package br.edu.fbv.programacaoavancada;
 
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +39,8 @@ public class ListServiceActivity extends AppCompatActivity {
         toolbar.setTitle("Prog Avançada");
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         ServiceMongo apimongo = new ServiceMongo();
 
        ArrayList<Pessoa> execute = null;
@@ -46,34 +54,34 @@ public class ListServiceActivity extends AppCompatActivity {
 
 
         listView = (ListView) findViewById(R.id.listservice);
-       // List<Pessoa> pessoas = todosOsCursos();
 
-        /**
-         listView = (ListView) findViewById(R.id.listservice);
-
-         arrayList = new ArrayList<>();
-
-         adapter = new AdapterProfissional(this ,0 , arrayList);
-
-         listView.setAdapter(adapter);
-
-         adapter.notifyDataSetChanged();
-         */
         AdapterTrabalhador adapterTrabalhador = new AdapterTrabalhador(execute, this);
         listView.setAdapter(adapterTrabalhador);
 
+        final ArrayList<Pessoa> finalExecute = execute;
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        //arrayList.get(position);
+                Pessoa pessoalista = finalExecute.get(position);
+
+                Intent enviarpessoa = new Intent(ListServiceActivity.this ,ProfissionalActivity.class);
+
+                enviarpessoa.putExtra("pessoa" , (Serializable) finalExecute.get(position));
+
+                startActivity(enviarpessoa);
+
+               // Toast.makeText(getApplicationContext(), pessoalista.getNome().toString()+"+"+pessoalista.getTelefone().toString(), Toast.LENGTH_SHORT).show();
+
+
+
+            }
+        });
 
 
     }
 
 
-/**
-    private List<Pessoa> todosOsCursos() {
-        return new ArrayList<>(Arrays.asList(
-                new Pessoa("989898A", "Jvbava", "fsdfsd", "fwegsgg", "wwwggg"),
-                new Pessoa("989898Ad3", "Jfeava", "fsdfsd", "fwegsgg", "wwwggg"),
-                new Pessoa("89897afg", "Javmjja", "fsdfsd", "fwegsgg", "wwwggg")
-        ));
-    }
-*/
+
 }
+
