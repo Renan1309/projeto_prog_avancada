@@ -22,8 +22,8 @@ import model.Opiniao;
 public class OpiniaoGet extends AsyncTask<Void, Void , List<Opiniao>> {
     @Override
     protected  List<Opiniao> doInBackground( Void ... voids) {
-        //String urlmongo = "https://vast-hollows-56426.herokuapp.com/cadastro";
-        String urlmongo = "http://192.168.15.9:8080/opiniao";
+        String urlmongo = "https://vast-hollows-56426.herokuapp.com/opiniao";
+        //String urlmongo = "http://192.168.15.9:8080/opiniao";
         InputStream inputStream = null;
 
         InputStreamReader inputStreamReader = null;
@@ -61,7 +61,7 @@ public class OpiniaoGet extends AsyncTask<Void, Void , List<Opiniao>> {
 
             JSONArray jsonArray = new JSONArray(jsonfinal);
 
-            JSONObject parentObject = jsonArray.getJSONObject(0);
+            JSONObject opinioesObject = jsonArray.getJSONObject(0);
             for (int j = 0; j < jsonArray.length(); j++) {
                 Opiniao opiniao = new Opiniao();
                 JSONObject finalObject = jsonArray.getJSONObject(j);
@@ -79,5 +79,14 @@ public class OpiniaoGet extends AsyncTask<Void, Void , List<Opiniao>> {
         }
 
         return listaopiniao;
+    }
+
+    protected void onPostExecute(ArrayList<Opiniao> opiniao) {
+        super.onPostExecute(opiniao);
+
+
+        // recuparaDados.recuperaDados(s);
+
+
     }
 }

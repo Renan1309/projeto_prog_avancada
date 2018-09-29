@@ -12,35 +12,36 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-import br.edu.fbv.programacaoavancada.FormularioActivity;
-import model.Pessoa;
+import br.edu.fbv.programacaoavancada.FeedbackActivity;
+import model.Opiniao;
 
-public class PostService extends AsyncTask<Pessoa, Void, String> {
+public class OpiniaoPost extends AsyncTask<Opiniao, Void , String> {
 
-    Pessoa pessoaRecebida = new Pessoa();
+    Opiniao opiniaorecebida = new Opiniao();
 
-    public PostService(FormularioActivity formularioActivity, Pessoa pessoa) {
-        pessoaRecebida = pessoa ;
+    public OpiniaoPost(FeedbackActivity feedbackActivity, Opiniao opiniao) {
+       opiniaorecebida = opiniao ;
     }
 
     @Override
-    protected String doInBackground(Pessoa... pessoas) {
-        String urlmongo = "https://vast-hollows-56426.herokuapp.com/cadastro";
-      // String urlmongo = "http://192.168.15.9:8080/cadastro";
+    protected String doInBackground(Opiniao... opiniaos) {
+        String urlmongo = "https://vast-hollows-56426.herokuapp.com/opiniao";
+        //String urlmongo = "http://192.168.15.9:8080/opiniao";
 
         JSONObject postDataParams = new JSONObject();
+
+
+
         try {
-            postDataParams.put("nome" ,pessoaRecebida.getNome());
-            postDataParams.put("profissao" ,pessoaRecebida.getProfissao());
-            postDataParams.put("telefone" ,pessoaRecebida.getTelefone());
-            postDataParams.put("site" ,pessoaRecebida.getSite());
+            postDataParams.put("nome" ,opiniaorecebida.getNome());
+            postDataParams.put("opiniao" ,opiniaorecebida.getOpiniao());
+            postDataParams.put("nota" , opiniaorecebida.getNota());
+
 
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
 
         try {
             URL url = new URL(urlmongo);
@@ -70,6 +71,11 @@ public class PostService extends AsyncTask<Pessoa, Void, String> {
         }
 
 
+
+
         return null;
+
+
+
     }
 }

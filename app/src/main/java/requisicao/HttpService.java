@@ -17,6 +17,9 @@ import model.CEP;
 
 
 public class  HttpService extends AsyncTask<Void , Void , CEP> {
+
+
+
     private final String cep;
 
     public HttpService(String cep) {

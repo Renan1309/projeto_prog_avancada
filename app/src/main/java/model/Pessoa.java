@@ -64,15 +64,7 @@ public class Pessoa implements Serializable {
 
 
 
-    public String toString() {
 
-        return "Id:" + getId()
-                + "\nTrabalhador: " + getNome()
-                + "\nProfissao: " + getProfissao()
-                + "\nTelefone: " + getTelefone()
-                + "\nSite: " + getSite();
-
-    }
 
 }
 

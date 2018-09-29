@@ -25,13 +25,27 @@ import java.util.List;
 import model.Pessoa;
 
 public class ServiceMongo extends AsyncTask<Void, Void , List<Pessoa>> {
+    /*
+    public static ServiceMongo instancia;
+
+    private ServiceMongo(){
+
+    }
+    public static ServiceMongo getInstancia() {
+        if (instancia == null)
+            instancia = new ServiceMongo();
+        return instancia;
+    }
+*/
+
+
 
 
     @Override
     protected List<Pessoa> doInBackground(Void... voids) {
 
-        //String urlmongo = "https://vast-hollows-56426.herokuapp.com/cadastro";
-        String urlmongo = "http://192.168.15.9:8080/cadastro";
+        String urlmongo = "https://vast-hollows-56426.herokuapp.com/cadastro";
+        //String urlmongo = "http://192.168.15.9:8080/cadastro";
         InputStream inputStream = null;
 
         InputStreamReader inputStreamReader = null;

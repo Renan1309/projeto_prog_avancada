@@ -63,6 +63,28 @@
             android:paddingLeft="12dp"
             android:text="Email"
             android:textSize="18sp" />
+
+
+        <Button
+            android:id="@+id/email_icon"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_email_black_24dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="160dp" />
+
+        <Button
+            android:id="@+id/tele_icon"
+            style="?attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_call_black_24dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="160dp" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -41,7 +41,8 @@ public class ListServiceActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ServiceMongo apimongo = new ServiceMongo();
+         ServiceMongo apimongo = new ServiceMongo();
+        //ServiceMongo apimongo = ServiceMongo.getInstancia();
 
        ArrayList<Pessoa> execute = null;
         try {
