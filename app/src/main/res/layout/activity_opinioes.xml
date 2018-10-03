@@ -14,9 +14,19 @@
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/segundotoolbar" />
+        tools:ignore="MissingConstraints"
+        android:layout_below="@+id/segundotoolbar"
 
+        />
+    <!---Seu comentário
+       <ListView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/listopiniao"
+           android:layout_below="@+id/segundotoolbar">
 
-</RelativeLayout>
+       </ListView>
+
+   -->
+
+   </RelativeLayout>

@@ -14,14 +14,19 @@ import model.Pessoa;
 
 public class AdapterTrabalhador extends BaseAdapter {
 
-    private final List<Pessoa> pessoas;
-    private final Activity activity;
+    private  List<Pessoa> pessoas;
+    private  Activity activity;
 
+    public  void lista (List<Pessoa> pessoas , Activity act){
+        this.pessoas = pessoas;
+        this.activity =act;
+    }
+/*
     public AdapterTrabalhador(List<Pessoa> pessoa ,  Activity act) {
         this.pessoas = pessoa;
         this.activity = act;
     }
-
+*/
 
     @Override
     public int getCount() {
@@ -65,16 +70,6 @@ public class AdapterTrabalhador extends BaseAdapter {
         return view;
 
 
-        /**
-        //metodo responsável pela construção de cada item
-        View view = activity.getLayoutInflater().inflate(R.layout.lista_profissional, parent, false);
-        Pessoa pessoa = pessoas.get(position);
-
-        TextView nome = (TextView)  view.findViewById(R.id.textServico);
-        nome.setText(pessoa.getNome());
-
-        return view;
-         */
     }
 
     public class ViewHolder {

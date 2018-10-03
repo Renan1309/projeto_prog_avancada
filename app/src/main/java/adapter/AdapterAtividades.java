@@ -17,9 +17,13 @@ public class AdapterAtividades extends RecyclerView.Adapter<AdapterAtividades.Vi
 
     private List<AtividadesListadas> atividadesListadasAdapter;
 
-    public AdapterAtividades(List<AtividadesListadas> atividadeslistadas) {
-        this.atividadesListadasAdapter = atividadeslistadas;
+    public  void lista (List<AtividadesListadas> atividades){
+        this.atividadesListadasAdapter = atividades;
     }
+
+    //public AdapterAtividades(List<AtividadesListadas> atividadeslistadas) {
+      //  this.atividadesListadasAdapter = atividadeslistadas;
+   // }
 
     @NonNull
     @Override

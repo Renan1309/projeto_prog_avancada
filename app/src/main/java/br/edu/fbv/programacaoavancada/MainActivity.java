@@ -8,10 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import model.Pessoa;
-import requisicao.ServiceMongo;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                Intent listaServicos = new Intent(MainActivity.this, ListServiceActivity.class);
+                Intent listaServicos = new Intent(MainActivity.this, ListProfissionalActivity.class);
                 startActivity(listaServicos);
                 /**
                 ServiceMongo apimongo = new ServiceMongo();

@@ -5,9 +5,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
-
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -27,15 +28,18 @@
         <activity android:name=".CepActivity" />
         <activity android:name=".CurriculoActivity" />
         <activity
-            android:name=".ListServiceActivity"
-            android:parentActivityName=".CardsActivity" />
+            android:name=".ListProfissionalActivity"
+            android:parentActivityName=".ListServiceActivity" />
         <activity
             android:name=".FeedbackActivity"
             android:parentActivityName=".CardsActivity" />
         <activity
             android:name=".ProfissionalActivity"
-            android:parentActivityName=".ListServiceActivity" />
-        <activity android:name=".OpinioesActivity"></activity>
+            android:parentActivityName=".ListProfissionalActivity" />
+        <activity android:name=".OpinioesActivity" />
+        <activity android:name=".ImpostoActivity" />
+        <activity android:name=".ListServiceActivity"
+            android:parentActivityName=".CardsActivity"></activity>
     </application>
 
 </manifest>

@@ -1,39 +1,30 @@
 package br.edu.fbv.programacaoavancada;
 
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
-import adapter.AdapterProfissional;
+import adapter.AdapterListServicos;
 import adapter.AdapterTrabalhador;
-import model.Pessoa;
-import requisicao.ServiceMongo;
+import model.Servicos;
 
 public class ListServiceActivity extends AppCompatActivity {
 
     private ListView listView ;
-    private  ArrayAdapter <String> adapter ;
-    private ArrayList<String> arrayList;
+    private List<Servicos> servicoslistados = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_service);
+        setContentView(R.layout.activity_list_service2);
 
         Toolbar toolbar = (Toolbar)  findViewById(R.id.segundotoolbar);
         toolbar.setTitle("Prog Avançada");
@@ -41,48 +32,48 @@ public class ListServiceActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-         ServiceMongo apimongo = new ServiceMongo();
-        //ServiceMongo apimongo = ServiceMongo.getInstancia();
+        listView = (ListView) findViewById(R.id.list_servico_oferecido);
 
-       ArrayList<Pessoa> execute = null;
-        try {
-            execute = (ArrayList<Pessoa>) apimongo.execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        this.listservicos();
 
+      AdapterListServicos adapterservicos = new AdapterListServicos(servicoslistados, this);
+      listView.setAdapter(adapterservicos);
 
-        listView = (ListView) findViewById(R.id.listservice);
-
-        AdapterTrabalhador adapterTrabalhador = new AdapterTrabalhador(execute, this);
-        listView.setAdapter(adapterTrabalhador);
-
-        final ArrayList<Pessoa> finalExecute = execute;
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        //arrayList.get(position);
-                Pessoa pessoalista = finalExecute.get(position);
-
-                Intent enviarpessoa = new Intent(ListServiceActivity.this ,ProfissionalActivity.class);
-
-                enviarpessoa.putExtra("pessoa" , (Serializable) finalExecute.get(position));
-
-                startActivity(enviarpessoa);
-
-               // Toast.makeText(getApplicationContext(), pessoalista.getNome().toString()+"+"+pessoalista.getTelefone().toString(), Toast.LENGTH_SHORT).show();
+      listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+          @Override
+          public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+              Intent Intent = new Intent(ListServiceActivity.this ,ListProfissionalActivity.class);
 
 
 
-            }
-        });
-
+              startActivity(Intent);
+          }
+      });
 
     }
 
+    public  void listservicos(){
+
+        Servicos servicos = new Servicos("Arquiteto",R.drawable.arquiteto);
+        this.servicoslistados.add(servicos);
+
+        servicos = new Servicos("Eletricista",R.drawable.eletricista);
+        this.servicoslistados.add(servicos);
+
+        servicos = new Servicos("Pedreiro",R.drawable.pedreiro);
+        this.servicoslistados.add(servicos);
+
+        servicos = new Servicos("Pintor",R.drawable.pintor);
+        this.servicoslistados.add(servicos);
+/*
+        servicos = new Servicos("Engenheiro",R.drawable.engenheiro);
+        this.servicoslistados.add(servicos);
+
+        servicos = new Servicos("Encanador",R.drawable.encanador);
+        this.servicoslistados.add(servicos);
 
 
+        //servicos = new Servicos("Pedreiro",R.drawable.arquiteto);
+*/
+    }
 }
-

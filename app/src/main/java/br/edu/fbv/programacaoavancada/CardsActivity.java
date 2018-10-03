@@ -16,13 +16,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import Intefaces.ListCardinterface;
 import adapter.AdapterAtividades;
 import model.AtividadesListadas;
+import Presenter.ListCardPresenter;
 
-public class CardsActivity extends AppCompatActivity {
+public class CardsActivity extends AppCompatActivity implements ListCardinterface.ListCardView {
 
     private RecyclerView recyclerAtividades ;
 
+    private AdapterAtividades adapter;
     private List<AtividadesListadas> atividadeslistadas  = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +41,28 @@ public class CardsActivity extends AppCompatActivity {
         toolbarx.setTitle("Prog Avançada"); // tava dando erro aqui fui procurar no git
         setSupportActionBar(toolbarx);//funcionar em versões anteriores
 
-
+        ListCardinterface.ListCardPresenter presenter = new ListCardPresenter(this);
 
         recyclerAtividades = findViewById(R.id.recyclerAtividades);
 
+        adapter = new AdapterAtividades();
+
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerAtividades.setLayoutManager(layoutManager);
-       // recyclerAtividades.setAdapter();
-        this.atividadeslistadas();
-        AdapterAtividades adapter = new AdapterAtividades(atividadeslistadas);
+
+        presenter.obterAtividadesListadas();
+
+       // adapter = new AdapterAtividades(atividadeslistadas);
+
+
+       // this.atividadeslistadas();
+
+       // AdapterAtividades adapter = new AdapterAtividades(atividadeslistadas);
+
+
+
         recyclerAtividades.setAdapter(adapter);
+
 
       recyclerAtividades.addOnItemTouchListener(
               new RecyclerItemClickListener(
@@ -58,7 +73,7 @@ public class CardsActivity extends AppCompatActivity {
                       switch(position) {
                           case 0:
                               //Perguntar aso prof se é pra jogar dentro de uma função as Intents
-                              Intent listaServicos = new Intent(CardsActivity.this, ListServiceActivity.class);
+                                  Intent listaServicos = new Intent(CardsActivity.this, ListServiceActivity.class);
                               startActivity(listaServicos);
                               break;
                           case 1:
@@ -71,6 +86,11 @@ public class CardsActivity extends AppCompatActivity {
 
                               Intent toolbar= new Intent(CardsActivity.this,OpinioesActivity.class);
                               startActivity(toolbar);
+                              break;
+                          case  3:
+                              //Intent calculo= new Intent(CardsActivity.this,ListServiceActivity.class);
+                              Intent calculo= new Intent(CardsActivity.this,ImpostoActivity.class);
+                              startActivity(calculo);
                               break;
                           default:
 
@@ -110,7 +130,7 @@ public class CardsActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+/*
     public void atividadeslistadas() {
         AtividadesListadas atividadesListadas = new AtividadesListadas("Serviços" ,"Venha conhecer os nosso serviços","#precisouAchou" ,R.drawable.servicos);
         this.atividadeslistadas.add(atividadesListadas);
@@ -120,5 +140,15 @@ public class CardsActivity extends AppCompatActivity {
 
         atividadesListadas = new AtividadesListadas("Test" ,"Card teste","card teste" ,R.drawable.prestadoresservico);
         this.atividadeslistadas.add(atividadesListadas);
+
+        atividadesListadas = new AtividadesListadas("Calcule seu lucro" , "Contas","veja o seu lucro ja com os impostos", R.drawable.taxas);
+        this.atividadeslistadas.add(atividadesListadas);
+    }
+*/
+    @Override
+    public void exibiCard(List<AtividadesListadas> atividadesListadas) {
+        //adapter.s
+
+        adapter.lista(atividadesListadas);
     }
 }

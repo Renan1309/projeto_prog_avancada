@@ -8,11 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import br.edu.fbv.programacaoavancada.ListServiceActivity;
+
 import  br.edu.fbv.programacaoavancada.R;
-import model.Pessoa;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class AdapterProfissional extends ArrayAdapter<String> {
 

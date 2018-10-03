@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import Factory.ConstrucaoProfissionais;
+import Factory.ContrucaoPessoas;
 import model.Pessoa;
 import requisicao.PostService;
 
@@ -46,7 +48,13 @@ public class FormularioActivity extends AppCompatActivity {
     }
 
     public void enviardados(){
-        Pessoa pessoa = new Pessoa();
+        ConstrucaoProfissionais FabricaPessoa = new  ConstrucaoProfissionais();
+
+
+
+       // Pessoa pessoa = new Pessoa();
+
+        Pessoa pessoa = (Pessoa) FabricaPessoa.criarhumano();
         pessoa.setNome((nome_formulario.getText().toString()));
         pessoa.setProfissao(profissao_formulario.getText().toString());
         pessoa.setTelefone(telefone_formulario.getText().toString());

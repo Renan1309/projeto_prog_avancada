@@ -1,26 +1,14 @@
 package model;
 
-import android.graphics.Bitmap;
+public class Cliente extends Humano {
 
-import java.io.Serializable;
-
-public class Pessoa extends Humano implements Serializable  {
     private String id;
     private String nome ;
     private String profissao;
     private String telefone;
     private String site;
-
-    /*
-    public Pessoa(String id, String nome, String profissao, String telefone, String site) {
-        this.id = id;
-        this.nome = nome;
-        this.profissao = profissao;
-        this.telefone = telefone;
-        this.site = site;
-    }
-    */
-
+    private String opiniao;
+    private String nota;
 
     public String getId() {
         return id;
@@ -62,9 +50,19 @@ public class Pessoa extends Humano implements Serializable  {
         this.site = site;
     }
 
+    public String getOpiniao() {
+        return opiniao;
+    }
 
+    public void setOpiniao(String opiniao) {
+        this.opiniao = opiniao;
+    }
 
+    public String getNota() {
+        return nota;
+    }
 
-
+    public void setNota(String nota) {
+        this.nota = nota;
+    }
 }
-
