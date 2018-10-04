@@ -33,8 +33,10 @@
         <activity
             android:name=".ProfissionalActivity"
             android:parentActivityName=".ListProfissionalActivity" />
-        <activity android:name=".OpinioesActivity" />
-        <activity android:name=".ImpostoActivity" />
+        <activity android:name=".OpinioesActivity"
+            android:parentActivityName=".CardsActivity"/>
+        <activity android:name=".ImpostoActivity"
+            android:parentActivityName=".CardsActivity"/>
         <activity android:name=".ListServiceActivity"
             android:parentActivityName=".CardsActivity"></activity>
     </application>

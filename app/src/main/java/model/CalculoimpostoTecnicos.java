@@ -3,8 +3,12 @@ package model;
 import Intefaces.CalculoImposto;
 
 public class CalculoimpostoTecnicos implements CalculoImposto {
+    private Double valor;
+
     @Override
     public double calculaSalarioComImposto(String profissão, double valor) {
-        return valor *0.15;
+
+        this.valor =  valor - (valor*0.15 );
+        return this.valor;
     }
 }

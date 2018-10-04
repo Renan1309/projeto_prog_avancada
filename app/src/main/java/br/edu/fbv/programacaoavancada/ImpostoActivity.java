@@ -2,6 +2,7 @@ package br.edu.fbv.programacaoavancada;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,11 @@ public class ImpostoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imposto);
+        Toolbar toolbarx = (Toolbar) findViewById(R.id.segundotoolbar);
+        toolbarx.setTitle(R.string.Servicos); // tava dando erro aqui fui procurar no git
+        setSupportActionBar(toolbarx);//funcionar em versões anteriores
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
@@ -57,11 +63,7 @@ public class ImpostoActivity extends AppCompatActivity {
 
         CalculoNaactivity calculoNaactivity = new CalculoNaactivity(profissao,valor);
 
-        // calculoNaactivity.setProfissao(profissao);
-        //calculoNaactivity.setValor(aDouble);
 
-
-        //double fin = calculoNaactivity.calcularvalorrecebido();
 
         stringdouble= Double.toString(calculoNaactivity.calcularvalorrecebido());
         resultadocalculo.setText( stringdouble);

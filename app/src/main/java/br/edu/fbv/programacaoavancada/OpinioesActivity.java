@@ -36,6 +36,8 @@ public class OpinioesActivity extends AppCompatActivity implements OpinioesInter
         toolbarx.setTitle(R.string.Servicos); // tava dando erro aqui fui procurar no git
         setSupportActionBar(toolbarx);//funcionar em versões anteriores
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 
         recyclerOpiniao = findViewById(R.id.recyclerOpinioes);

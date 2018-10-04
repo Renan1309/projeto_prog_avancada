@@ -21,45 +21,46 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nome" />
+            android:text="@string/Nomefeed" />
 
         <EditText
             android:id="@+id/nome_feed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome" />
+            android:hint="@string/Nomefeed" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Opiniao" />
+            android:text="@string/Opiniaofeed" />
 
         <EditText
             android:id="@+id/opiniao_feed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Opinião" />
+            android:hint="@string/Opiniaofeed" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nota" />
+            android:text="@string/Notafeed" />
 
         <EditText
             android:id="@+id/nota_feed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:hint="Nota" />
+            android:hint="@string/Notafeed" />
+
 
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Digite um nota de 0 a 10" />
+            android:text="@string/descriNotafeed" />
 
 
 
@@ -69,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/ic_forward_black_24dp"
-            android:text="Enviar" />
+            android:text="@string/Botaofeed" />
 
 
     </LinearLayout>

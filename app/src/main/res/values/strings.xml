@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">ProgramacaoAvancada</string>
-
     <string name="Servicos">Servicos</string>
-
-
-
-
+    <string name="Nomefeed">Nome</string>
+    <string name="Opiniaofeed">Opinião</string>
+    <string name="Notafeed">Nota</string>
+    <string name="descriNotafeed">Digite uma nota de 0 a 10</string>
+    <string name="Botaofeed">Enviar</string>
+    <string name="Calculadoratesteprinc">Calcule o quanto vc vai pagar por estar na aplicação</string>
+    <string name="Calculadorasimule">Simule digitando um valor de um atendimento</string>
+    <string name="CalculadoraProfissao">Profissão</string>
+    <string name="Calculadoravalor">Valor</string>
+    <string name="CalculadoCalcular">Calcular</string>
 </resources>

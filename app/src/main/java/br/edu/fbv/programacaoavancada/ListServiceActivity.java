@@ -47,8 +47,31 @@ public class ListServiceActivity extends AppCompatActivity {
               switch (position){
                   case 0:
                       Intent Intent = new Intent(ListServiceActivity.this ,ListProfissionalActivity.class);
-                      Intent.putExtra("profissao", "cadastro");
+                      Intent.putExtra("profissao", "Arquiteto");
                       startActivity(Intent);
+
+                      break;
+
+                  case 1:
+                      Intent eletricista = new Intent(ListServiceActivity.this ,ListProfissionalActivity.class);
+                      eletricista.putExtra("profissao", "Eletricista");
+                      startActivity(eletricista);
+
+                      break;
+
+                  case 2:
+                      Intent pedreiro = new Intent(ListServiceActivity.this ,ListProfissionalActivity.class);
+                      pedreiro.putExtra("profissao", "Pedreiro");
+                      startActivity(pedreiro);
+
+                      break;
+
+                  case 3:
+                      Intent pintor = new Intent(ListServiceActivity.this ,ListProfissionalActivity.class);
+                      pintor.putExtra("profissao", "Pintor");
+                      startActivity(pintor);
+
+                      break;
               }
               }
 

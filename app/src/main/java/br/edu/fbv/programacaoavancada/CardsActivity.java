@@ -52,15 +52,6 @@ public class CardsActivity extends AppCompatActivity implements ListCardinterfac
 
         presenter.obterAtividadesListadas();
 
-       // adapter = new AdapterAtividades(atividadeslistadas);
-
-
-       // this.atividadeslistadas();
-
-       // AdapterAtividades adapter = new AdapterAtividades(atividadeslistadas);
-
-
-
         recyclerAtividades.setAdapter(adapter);
 
 

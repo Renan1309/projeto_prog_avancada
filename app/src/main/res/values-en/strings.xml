@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="Nomefeed">Name</string>
+    <string name="Opiniaofeed">Opinion</string>
+    <string name="Notafeed">Note</string>
+    <string name="descriNotafeed">Enter a rating from 0 to 10</string>
+    <string name="Botaofeed">Submit</string>
+    <string name="Calculadoratesteprinc">Calculate how much you will pay to be in the application</string>
+    <string name="Calculadosimule">Simulate typing a value of a service</string>
+    <string name="CalculadoraProfissao">Profession</string>
+    <string name="Calculadoravalor">value</string>
+    <string name="CalculadoCalcular">Calculate</string>
+
 
 </resources>
