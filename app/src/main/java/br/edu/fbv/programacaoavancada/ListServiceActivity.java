@@ -42,12 +42,20 @@ public class ListServiceActivity extends AppCompatActivity {
       listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
           @Override
           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-              Intent Intent = new Intent(ListServiceActivity.this ,ListProfissionalActivity.class);
+
+
+              switch (position){
+                  case 0:
+                      Intent Intent = new Intent(ListServiceActivity.this ,ListProfissionalActivity.class);
+                      Intent.putExtra("profissao", "cadastro");
+                      startActivity(Intent);
+              }
+              }
 
 
 
-              startActivity(Intent);
-          }
+
+
       });
 
     }

@@ -19,8 +19,14 @@ public class OpiniaoPost extends AsyncTask<Opiniao, Void , String> {
 
     Opiniao opiniaorecebida = new Opiniao();
 
+
+    /*
     public OpiniaoPost(FeedbackActivity feedbackActivity, Opiniao opiniao) {
        opiniaorecebida = opiniao ;
+    }
+*/
+    public OpiniaoPost(Opiniao opiniao) {
+        this.opiniaorecebida =opiniao;
     }
 
     @Override

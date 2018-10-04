@@ -18,9 +18,14 @@ import model.Pessoa;
 public class PostService extends AsyncTask<Pessoa, Void, String> {
 
     Pessoa pessoaRecebida = new Pessoa();
-
+    /*
     public PostService(FormularioActivity formularioActivity, Pessoa pessoa) {
         pessoaRecebida = pessoa ;
+    }
+    */
+
+    public PostService(Pessoa pessoa) {
+        this.pessoaRecebida = pessoa;
     }
 
     @Override

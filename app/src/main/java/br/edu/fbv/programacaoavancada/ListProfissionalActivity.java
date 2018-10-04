@@ -28,6 +28,7 @@ public class ListProfissionalActivity extends AppCompatActivity implements ListP
 
     private ArrayList<Pessoa> execute;
     private AdapterTrabalhador adapterTrabalhador;
+    private  String profissao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +41,13 @@ public class ListProfissionalActivity extends AppCompatActivity implements ListP
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        Intent profissaorecebida = getIntent();
+        profissao = profissaorecebida.getStringExtra("profissao");
+
         adapterTrabalhador = new AdapterTrabalhador();
 
         ListProfissinalInterface.ListProfissionalPresenter presenter = new ListProfissionalPresenter(this);
-        presenter.obterListaProfissionais();
+        presenter.obterListaProfissionais(this.profissao);
 
 
         /*

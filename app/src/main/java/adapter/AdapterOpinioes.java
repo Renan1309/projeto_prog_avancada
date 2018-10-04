@@ -19,8 +19,8 @@ public class AdapterOpinioes extends  RecyclerView.Adapter<AdapterOpinioes.ViewH
 
     private List<Opiniao> OpiniaoAdapter;
 
-    public AdapterOpinioes(List<Opiniao> Opinioes) {
-        this.OpiniaoAdapter = Opinioes;
+    public void AdapterOpinioes(List<Opiniao> opiniaos) {
+        this.OpiniaoAdapter = opiniaos;
     }
 
 

@@ -49,11 +49,7 @@ public class ProfissionalActivity extends AppCompatActivity {
         telefone.setText(pessoa.getTelefone());
         email.setText(pessoa.getSite());
 
-
-
-
-
-      ligar.setOnClickListener(new View.OnClickListener() {
+        ligar.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
               //EditText campoTelefone = (EditText) findViewById(R.id.edTelefone);

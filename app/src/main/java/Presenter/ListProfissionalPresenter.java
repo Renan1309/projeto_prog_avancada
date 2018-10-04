@@ -15,13 +15,13 @@ public class ListProfissionalPresenter implements ListProfissinalInterface.ListP
     }
 
     @Override
-    public void obterListaProfissionais() {
+    public void obterListaProfissionais(String profissao) {
         ServiceMongo apimongo = new ServiceMongo();
 
         ArrayList<Pessoa> Pessoas = null;
 
         try {
-            Pessoas = (ArrayList<Pessoa>) apimongo.execute().get();
+            Pessoas = (ArrayList<Pessoa>) apimongo.execute(profissao).get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -30,4 +30,6 @@ public class ListProfissionalPresenter implements ListProfissinalInterface.ListP
 
         view.exibirListaProfissionais(Pessoas);
     }
+
+
 }

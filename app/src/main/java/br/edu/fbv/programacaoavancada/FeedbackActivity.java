@@ -6,16 +6,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import Intefaces.FeedbackInterface;
+import Presenter.FeedbackPresenter;
 import model.Opiniao;
 import requisicao.OpiniaoPost;
 
 
-public class FeedbackActivity extends AppCompatActivity {
+public class FeedbackActivity extends AppCompatActivity implements  FeedbackInterface.FeedbackView {
     Button enviarfeed;
     EditText nomefeed;
     EditText opiniaofeed;
     EditText notafeed;
+
+    FeedbackInterface.FeedbackPresenter presenter = new FeedbackPresenter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,8 @@ public class FeedbackActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         nomefeed = findViewById(R.id.nome_feed);
         opiniaofeed = findViewById(R.id.opiniao_feed);
@@ -50,7 +57,13 @@ public class FeedbackActivity extends AppCompatActivity {
         opiniao.setOpiniao((opiniaofeed.getText().toString()));
         opiniao.setNota((notafeed.getText().toString()));
 
-        OpiniaoPost opiniaoPost = new OpiniaoPost(this,opiniao);
-        opiniaoPost.execute();
+        presenter.enviarFeedback(opiniao);
+        enviadoFeedSucesso();
+
+    }
+
+    @Override
+    public void enviadoFeedSucesso() {
+        Toast.makeText(getApplicationContext(), "Feedback enviado com sucesso", Toast.LENGTH_SHORT).show();
     }
 }

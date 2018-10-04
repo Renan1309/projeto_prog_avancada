@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
+import Intefaces.OpinioesInterface;
+import Presenter.OpinioesPresenter;
 import adapter.AdapterAtividades;
 import adapter.AdapterListOpinioes;
 import adapter.AdapterOpinioes;
@@ -19,51 +21,22 @@ import model.Pessoa;
 import requisicao.OpiniaoGet;
 
 
-public class OpinioesActivity extends AppCompatActivity {
+public class OpinioesActivity extends AppCompatActivity implements OpinioesInterface.OpinioesView {
 
     private RecyclerView recyclerOpiniao ;
-
     private ListView listView ;
-
-    private List<Opiniao> Opinioes  = new ArrayList<>();
+    private  AdapterOpinioes adapterOpinioes;
+    private List<Opiniao> Opinioes  ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_opinioes);
-        /*
-        OpiniaoGet opiniaoGet = new OpiniaoGet();
-
-        ArrayList<Opiniao> execute = null;
-
-        try {
-            execute = (ArrayList<Opiniao>) opiniaoGet.execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        listView = (ListView) findViewById(R.id.listopiniao);
-        //AdapterTrabalhador adapterTrabalhador = new AdapterTrabalhador(execute, this);
-        AdapterListOpinioes adapterListOpinioes = new AdapterListOpinioes(execute,this);
-        listView.setAdapter(adapterListOpinioes);
-        */
-
-
-        OpiniaoGet opiniaoGet = new OpiniaoGet();
-
-        try {
-            Opinioes = (ArrayList<Opiniao>) opiniaoGet.execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         Toolbar toolbarx = (Toolbar) findViewById(R.id.segundotoolbar);
-        toolbarx.setTitle("Prog Avançada"); // tava dando erro aqui fui procurar no git
+        toolbarx.setTitle(R.string.Servicos); // tava dando erro aqui fui procurar no git
         setSupportActionBar(toolbarx);//funcionar em versões anteriores
+
+
 
         recyclerOpiniao = findViewById(R.id.recyclerOpinioes);
 
@@ -71,10 +44,38 @@ public class OpinioesActivity extends AppCompatActivity {
         recyclerOpiniao.setLayoutManager(layoutManager);
 
         //this.atividadeslistadas(); CHAMAR API AQUI
-        AdapterOpinioes adapter = new AdapterOpinioes(Opinioes);
-        recyclerOpiniao.setAdapter(adapter);
+        adapterOpinioes = new AdapterOpinioes();
+
+        OpinioesInterface.OpinioesPresenter presenter = new OpinioesPresenter(this);
+        presenter.obterOpinioes();
+
+
+        recyclerOpiniao.setAdapter(adapterOpinioes);
+
+
+
+    }
+
+    @Override
+    public void exibirOpinioes(List<Opiniao> opiniaos) {
+        this.Opinioes = opiniaos;
+        adapterOpinioes.AdapterOpinioes(opiniaos);
 
 
 
     }
 }
+
+
+/**
+ OpiniaoGet opiniaoGet = new OpiniaoGet();
+
+ try {
+ Opinioes = (ArrayList<Opiniao>) opiniaoGet.execute().get();
+ } catch (ExecutionException e) {
+ e.printStackTrace();
+ } catch (InterruptedException e) {
+ e.printStackTrace();
+ }
+
+ */

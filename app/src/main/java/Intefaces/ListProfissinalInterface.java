@@ -13,6 +13,6 @@ public interface ListProfissinalInterface {
 
     interface ListProfissionalPresenter{
 
-        void obterListaProfissionais ();
+        void obterListaProfissionais (String profissao);
     }
 }

@@ -24,7 +24,7 @@
                 android:id="@+id/nomeCardPrin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Servicos"
+                android:text="@string/Servicos"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
