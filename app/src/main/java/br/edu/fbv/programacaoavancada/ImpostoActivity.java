@@ -26,11 +26,7 @@ public class ImpostoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imposto);
-        Toolbar toolbarx = (Toolbar) findViewById(R.id.segundotoolbar);
-        toolbarx.setTitle(R.string.Servicos); // tava dando erro aqui fui procurar no git
-        setSupportActionBar(toolbarx);//funcionar em versões anteriores
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        
 
 
 

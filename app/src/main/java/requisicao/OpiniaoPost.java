@@ -32,7 +32,9 @@ public class OpiniaoPost extends AsyncTask<Opiniao, Void , String> {
     @Override
     protected String doInBackground(Opiniao... opiniaos) {
         String urlmongo = "https://vast-hollows-56426.herokuapp.com/opiniao";
-        //String urlmongo = "http://192.168.15.9:8080/opiniao";
+        //String urlmongo = "http:// 192.168.43.130:8080/opiniao";
+
+
 
         JSONObject postDataParams = new JSONObject();
 

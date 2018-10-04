@@ -23,7 +23,7 @@ public class OpiniaoGet extends AsyncTask<Void, Void , List<Opiniao>> {
     @Override
     protected  List<Opiniao> doInBackground( Void ... voids) {
         String urlmongo = "https://vast-hollows-56426.herokuapp.com/opiniao";
-        //String urlmongo = "http://192.168.15.9:8080/opiniao";
+       // String urlmongo = "http:// 192.168.43.130:8080/opiniao";
         InputStream inputStream = null;
 
         InputStreamReader inputStreamReader = null;

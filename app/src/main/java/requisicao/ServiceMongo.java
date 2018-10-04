@@ -49,7 +49,9 @@ public class ServiceMongo extends AsyncTask<String, Void , List<Pessoa>> {
         this.profissao = strings ;
 
         String urlmongo = "https://vast-hollows-56426.herokuapp.com/"+strings[0];
-        //String urlmongo = "http://192.168.15.9:8080/cadastro";
+       //String urlmongo = "http://192.168.15.9:8080/"+strings[0];
+        // String urlmongo = "http://192.168.43.130/"+strings[0];
+
         InputStream inputStream = null;
 
         InputStreamReader inputStreamReader = null;
